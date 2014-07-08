@@ -21,10 +21,17 @@ class App < Sinatra::Base
 
       codes = ""
       images["photoset"]["photo"].each_with_index do |photo, index|
-        codes += "<p><a href='http://www.flickr.com/photos/405images/#{photo["id"]}'><img src='#{photo["url_m"]}' width='100%' alt='#{photo["title"]}' border='0'></a></p>"
+        if index == 0
+          codes += "<p>"
+          codes +=  "\n"
+        end
+
+        codes += "<img src='#{photo["url_m"]}' width='100%' alt='#{photo["title"]}' border='0'>"
         codes +=  "\n"
 
-        unless images["photoset"]["photo"].length == (index + 1)
+        if images["photoset"]["photo"].length == (index + 1)
+          codes += "</p>"
+        else
           codes += "<br>"
           codes +=  "\n"
         end
