@@ -32,7 +32,7 @@ class App < Sinatra::Base
         if images["photoset"]["photo"].length == (index + 1)
           codes += "</p>"
         else
-          codes += "<br>"
+          codes += "<br />"
           codes +=  "\n"
         end
       end
