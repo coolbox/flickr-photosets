@@ -31,7 +31,8 @@ class App < Sinatra::Base
       end
 
       # Copy to clipboard
-      IO.popen('pbcopy', 'w') { |f| f << codes }
+      # Doesn't seem to work on Heroku.
+      # IO.popen('pbcopy', 'w') { |f| f << codes }
 
       # Output just incase
       p codes
