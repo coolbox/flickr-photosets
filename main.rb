@@ -17,10 +17,10 @@ class App < Sinatra::Base
     content_type :text
 
     # Init Flickr
-    FlickRaw.api_key = "c454fcc23bb577254855c70d5b04e53f"
-    FlickRaw.shared_secret = "85c0d7f0b6a8f769"
-    flickr.access_token = "72157645272349609-5cd243ab5ff0a23e"
-    flickr.access_secret = "152c2607d9c7cc0c"
+    FlickRaw.api_key       = ENV["FLICKR_API_KEY"]
+    FlickRaw.shared_secret = ENV["FLICKR_SHARED_SECRET"]
+    flickr.access_token    = ENV["FLICKR_ACCESS_TOKEN"]
+    flickr.access_secret   = ENV["FLICKR_ACCESS_SECRET"]
 
     # Photoset
     photoset_id = params[:photoset]
