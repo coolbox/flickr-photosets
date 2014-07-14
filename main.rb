@@ -14,8 +14,10 @@ class App < Sinatra::Base
     # Photoset
     photoset_id = params[:photoset]
 
-    if !photoset_id.nil? 
-      url = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=#{ENV['FLICKR_API_KEY']}&photoset_id=#{photoset_id}&extras=url_m&per_page=500&format=json&nojsoncallback=1"
+    if !photoset_id.nil?
+      # Flickr API Extras docs:
+      # http://librdf.org/flickcurl/api/flickcurl-searching-search-extras.html
+      url = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=#{ENV['FLICKR_API_KEY']}&photoset_id=#{photoset_id}&extras=url_o&per_page=500&format=json&nojsoncallback=1"
       response = Net::HTTP.get_response(URI.parse(url))
       images = JSON.parse(response.body)
 
