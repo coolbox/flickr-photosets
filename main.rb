@@ -28,7 +28,7 @@ class App < Sinatra::Base
           codes +=  "\n"
         end
 
-        codes += "<img src='#{photo["url_m"]}' width='100%' alt='#{photo["title"]}' border='0'>"
+        codes += "<img src='#{photo["url_o"]}' width='100%' alt='#{photo["title"]}' border='0'>"
         codes +=  "\n"
 
         if images["photoset"]["photo"].length == (index + 1)
