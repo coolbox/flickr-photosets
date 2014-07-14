@@ -9,3 +9,5 @@ gem 'foreman'
 gem 'puma'
 
 gem 'dotenv'
+
+gem 'flickraw', '~> 0.9.8'
